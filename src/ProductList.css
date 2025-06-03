@@ -74,6 +74,24 @@ body {
     gap: 20px;
 }
 
+.category {
+  text-align: center;
+  position: relative;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.category::before,
+.category::after {
+  content: "";
+  display: block;
+  width: 20%;         /* Largo de la línea */
+  height: 1px;
+  background-color: #999; /* Color gris sutil */
+  margin: 1px auto; /* Espaciado entre texto y línea */
+}
+
+
 /* Pseudo-classes - Hover effect on product button */
 .product-card:hover {
     transform: scale(1.05);
