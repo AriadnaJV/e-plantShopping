@@ -244,6 +244,20 @@ function ProductList({ onHomeClick }) {
         textDecoration: 'none',
     }
 
+    useEffect(() => {
+        const updatedState = {};
+      
+        plantsArray.forEach(category => {
+          category.plants.forEach(plant => {
+            const found = cartItems.find(item => item.name === plant.name);
+            updatedState[plant.name] = !!found;
+          });
+        });
+      
+        setAddedToCart(updatedState);
+      }, [cartItems]);
+      
+
     const handleHomeClick = (e) => {
         e.preventDefault();
         onHomeClick();
